@@ -1,0 +1,41 @@
+# http port number(default 8080)
+server: 
+  port: 8081
+  servlet: 
+    context-path: /
+    encoding: 
+      charset: UTF-8
+      enabled: true
+      force: true
+      
+# db connection(oracle) - spring(context.xml)
+spring: 
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: springboot_ict03
+    password: tiger
+    
+# spring(servlet-context.xml)
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  jpa:
+    hibernate:
+      ddl-auto: update  # create update none #create:사용자테이블이 없으면 테이블 자동생성
+      naming: 
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    
+  application:
+    name: user-service
+  main:
+    allow-circular-references: true
+     
+# MyBatis - spring(dataSource-config.xml)
+mybatis: 
+  mapper-locations: mappers/**/*.xml
+  type-aliases-package: fullstack.jwt.back_end.mappers
+  
