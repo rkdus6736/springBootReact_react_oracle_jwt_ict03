@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
 @Table(name="react_login_tbl")	 // import : javax.persistence
 public class User {
 	
