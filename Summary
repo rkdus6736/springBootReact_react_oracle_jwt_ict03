@@ -14,3 +14,8 @@ SELECT * FROM react_login_tbl;
 
 [ 리액트 플젝 생성 ]
 npx creat-react-app front-end
+
+[ 데이터 insert 결과 ]
+-- id 	password												first_name	last_name	token
+-- kim	$2a$10$.xYrtK2eKSH1.jHCrHdt8uV/OYYzrVPl7O/JDYKfAC8DK5RDo8.2.	kim	gayeon	eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjM4MDE4MTksImlhdCI6MTcyMzc5ODIxOX0.Xfde8LwAi9CAhXfTMr9GAUVFcT28y6ctxEMBt-pXJYw
+-- jwt	$2a$10$OCu1NhMAQq6DpyIx4M6vQuKBNGmde/qXiXVesvkETHZKdGIIsySi6	J	wt	eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjM4MDE5ODcsImlhdCI6MTcyMzc5ODM4N30.WqShZiwUPLA2vJ6vHzHxP1wWE8pprMyHPjqmfGFGKTw

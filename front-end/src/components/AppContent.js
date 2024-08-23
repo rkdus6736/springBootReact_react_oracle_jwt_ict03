@@ -22,8 +22,8 @@ class AppContent extends Component {
     }
 
     onLogin = (e, id, password) => {
-        e.preventDefault();
-        request(
+        e.preventDefault();     // 폼 제출 시 페이지가 새로고침되지 않도록 기본 동작을 막아, JavaScript로 요청을 처리
+        request(        // 사용자가 입력한 ID와 비밀번호를 포함한 POST 요청을 /login 엔드포인트로 보냄.
             "POST",
             "/login",
             {
@@ -31,12 +31,12 @@ class AppContent extends Component {
                 password: password
             })
             .then((res) => {
-                this.setState({componentToShow: "messages"});
-                setAuthToken(res.data.token);
+                this.setState({componentToShow: "messages"});   // 로그인 성공 시, 상태를 "messages"로 변경하여 메시지 화면을 표시
+                setAuthToken(res.data.token);       // 서버로부터 받은 인증 토큰을 저장
             })
             .catch((error) => {
-                this.setState({componentToShow: "welcome"});
-                setAuthToken(null);
+                this.setState({componentToShow: "welcome"});    // 로그인 실패 시, 상태를 "welcome"으로 변경하여 환영 화면을 다시 표시
+                setAuthToken(null);  // 인증 토큰을 null로 설정하여 인증 상태를 초기화
             }
         );
     }
